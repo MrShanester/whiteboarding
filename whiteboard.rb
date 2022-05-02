@@ -46,28 +46,51 @@
 # input: height = [1,8,6,2,5,4,8,3,7]
 # expected output: volume = 49
 
-def volume(height)
-  j = 0
+# def volume(height)
+#   j = 0
+#   i = 0
+#   liquid = 0
+#   height.length.times do 
+#     distance = 1
+#     while j < height.length
+#       if height[i] > height[j]
+#         temp =  height[j]
+#       else
+#         temp = height[i]
+#       end
+#       temp = temp * distance
+#       liquid = temp if temp > liquid
+#       distance += 1
+#       j += 1
+#       temp = 0
+#     end
+#     i += 1
+#     j = i + 1
+#   end
+#   return liquid
+# end
+
+# print volume([1,8,6,2,5,4,8,3,7])
+
+# Validate parentheses
+
+def validate(string)
   i = 0
-  liquid = 0
-  height.length.times do 
-    distance = 1
-    while j < height.length
-      if height[i] > height[j]
-        temp =  height[j]
-      else
-        temp = height[i]
-      end
-      temp = temp * distance
-      liquid = temp if temp > liquid
-      distance += 1
-      j += 1
-      temp = 0
+  stack = []
+  while i < string.length do
+    if string[i] == "[" || string[i] == "{" || string[i] == "("
+      stack << string[i]
+    elsif string[i] == "]" && stack.last == "["
+      stack.pop
+    elsif string[i] == "}" && stack.last == "{"
+      stack.pop
+    elsif string[i] == ")" && stack.last == "("
+      stack.pop
     end
     i += 1
-    j = i + 1
   end
-  return liquid
+  return "Valid" if stack.length == 0
+  "Invalid"
 end
 
-print volume([1,8,6,2,5,4,8,3,7])
+print validate("({[})")
