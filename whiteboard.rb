@@ -109,4 +109,25 @@ def smallest(nums)
   end
 end
 
-print smallest([-1, -2, 4, 5, 6, 2 ,1 ,3])
+# print smallest([-1, -2, 4, 5, 6, 2 ,1 ,3])
+
+# bubble sort
+
+def bubble_sort(array)
+  sorted_array = array
+  temp = 0
+  array.length.times do
+    i = 0
+    (array.length - 1).times do
+      if array[i + 1] < array[i]
+        temp = array[i]
+        array[i] = array[i + 1]
+        array[i + 1] = temp
+      end
+      i += 1
+    end
+  end
+  return sorted_array
+end
+
+print bubble_sort([3,4,5,2,1])
