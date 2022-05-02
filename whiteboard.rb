@@ -74,17 +74,17 @@
 
 # Validate parentheses
 
-def validate(string)
+def validate(s)
   i = 0
   stack = []
-  while i < string.length do
-    if string[i] == "[" || string[i] == "{" || string[i] == "("
-      stack << string[i]
-    elsif string[i] == "]" && stack.last == "["
+  while i < s.length do
+    if s[i] == "[" || s[i] == "{" || s[i] == "("
+      stack << s[i]
+    elsif s[i] == "]" && stack.last == "["
       stack.pop
-    elsif string[i] == "}" && stack.last == "{"
+    elsif s[i] == "}" && stack.last == "{"
       stack.pop
-    elsif string[i] == ")" && stack.last == "("
+    elsif s[i] == ")" && stack.last == "("
       stack.pop
     end
     i += 1
@@ -93,4 +93,20 @@ def validate(string)
   "Invalid"
 end
 
-print validate("({[})")
+# print validate("({[})")
+
+# return smallest missing number
+
+def smallest(nums)
+  hash = {}
+  nums.each do |num|
+    hash[num] = true
+  end
+  small = 1
+  while true
+    return small unless hash[small]
+    small += 1
+  end
+end
+
+print smallest([-1, -2, 4, 5, 6, 2 ,1 ,3])
