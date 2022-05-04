@@ -130,4 +130,20 @@ def bubble_sort(array)
   return sorted_array
 end
 
-print bubble_sort([3,4,5,2,1])
+# print bubble_sort([3,4,5,2,1])
+
+# double items in array
+
+def double(array)
+  return array.map{|n| n * 2}
+end
+
+# print double([1,2,3,4,5])
+
+#select all even numbers from an array
+
+def even(array)
+  return array.select{|n| n % 2 == 0}
+end
+
+print even([1,2,3,4,5])
