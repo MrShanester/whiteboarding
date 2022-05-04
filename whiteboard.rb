@@ -146,4 +146,12 @@ def even(array)
   return array.select{|n| n % 2 == 0}
 end
 
-print even([1,2,3,4,5])
+# print even([1,2,3,4,5])
+
+#string to integer
+
+def s_to_i(string)
+  return string.gsub(/[a-zA-Z ]/, "").to_i
+end
+
+# print s_to_i("     AAvv vv-42 with words      ")
