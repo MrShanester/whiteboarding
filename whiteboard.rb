@@ -155,3 +155,27 @@ def s_to_i(string)
 end
 
 # print s_to_i("     AAvv vv-42 with words      ")
+
+
+# Integers not contained in both arrays 
+
+def outliers(array, array_two)
+  a_one_hash = {}
+  a_two_hash = {}
+  return_array = []
+  array.each do |num|
+    a_one_hash[num] = true
+  end
+  array_two.each do |num|
+    a_two_hash[num] = true
+  end
+  array.each do |num|
+    return_array << num unless a_two_hash[num]
+  end
+  array_two.each do |num|
+    return_array << num unless a_one_hash[num]
+  end
+  return return_array
+end
+
+print outliers([1,2,3,4,5], [1,3,6,7])
