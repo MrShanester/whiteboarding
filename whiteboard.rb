@@ -178,4 +178,28 @@ def outliers(array, array_two)
   return return_array
 end
 
-print outliers([1,2,3,4,5], [1,3,6,7])
+# print outliers([1,2,3,4,5], [1,3,6,7])
+
+# return all unique numbers
+
+def unique(array)
+  hash = {}
+  return_array = []
+  array.each do |num|
+    unless hash[num]
+      hash[num] = 1
+    else 
+      hash[num] += 1
+    end
+  end
+  hash.each do |k,v|
+    if v == 1
+      return_array << k
+    end
+  end
+  return return_array
+end
+
+print unique([1,1,2,3,3,4,4,5,6,6,6])
+
+#outut = [2,5]
