@@ -200,6 +200,19 @@ def unique(array)
   return return_array
 end
 
-print unique([1,1,2,3,3,4,4,5,6,6,6])
+# print unique([1,1,2,3,3,4,4,5,6,6,6])
 
 #outut = [2,5]
+
+def fancy?(string)
+  hash = {"posh" => true, "sir" => true, "lady" => true, "lord" => true, "prim" => true, "dear" => true, "salutations" => true, "gold" => true}
+  array = string.split(" ")
+  count = 0
+  array.each do |word|
+    count += 1 if hash[word.downcase]
+  end
+  return true if count >= 10
+  false
+end
+
+print fancy?("Hello my posh boy, and salutations to your father.")
