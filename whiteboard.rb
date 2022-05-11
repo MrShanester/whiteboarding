@@ -215,4 +215,11 @@ def fancy?(string)
   false
 end
 
-print fancy?("Hello my posh boy, and salutations to your father.")
+# print fancy?("Hello my posh boy, and salutations to your father.")
+
+def theory
+  answer = 42
+  return answer
+end
+
+print theory
