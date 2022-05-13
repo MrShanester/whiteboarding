@@ -222,4 +222,20 @@ def theory
   return answer
 end
 
-print theory
+# print theory
+
+def divisibleSumPairs(k, ar)
+  pairs = []
+  valid = [] 
+  ar.each do |num|
+      ar.each do |n2|
+          pairs << [num, n2] if num < n2
+      end      
+  end
+  pairs.each do |pair|
+      valid << pair if (pair[0] + pair[1]) % k == 0
+  end
+  return valid.length
+end
+
+print divisibleSumPairs(3, [1,3,2,6,1,2])
