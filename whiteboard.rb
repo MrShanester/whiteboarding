@@ -228,12 +228,12 @@ def divisibleSumPairs(k, ar)
   pairs = []
   valid = [] 
   ar.each do |num|
-      ar.each do |n2|
-          pairs << [num, n2] if num < n2
+    ar.each do |n2|
+        pairs << [num, n2] if num < n2
       end      
   end
   pairs.each do |pair|
-      valid << pair if (pair[0] + pair[1]) % k == 0
+    valid << pair if (pair[0] + pair[1]) % k == 0
   end
   return valid.length
 end
