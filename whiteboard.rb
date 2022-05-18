@@ -224,13 +224,13 @@ end
 
 # print theory
 
-def divisibleSumPairs(k, ar)
+def divisible_sum_pairs(k, ar)
   pairs = []
   valid = [] 
   ar.each do |num|
     ar.each do |n2|
-        pairs << [num, n2] if num < n2
-      end      
+      pairs << [num, n2] if num < n2
+    end      
   end
   pairs.each do |pair|
     valid << pair if (pair[0] + pair[1]) % k == 0
@@ -238,4 +238,18 @@ def divisibleSumPairs(k, ar)
   return valid.length
 end
 
-print divisibleSumPairs(3, [1,3,2,6,1,2])
+print divisible_sum_pairs(3, [1,3,2,6,1,2])
+
+def log_stack(height)
+  i = 1
+  height.times do
+    stack = ""
+    i.times do
+      stack += "o"
+    end
+    puts stack.center(height)
+    i += 1
+  end
+end
+
+log_stack(6)
