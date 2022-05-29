@@ -253,3 +253,23 @@ def log_stack(height)
 end
 
 log_stack(6)
+
+def diablo_II_wolf_counter(w, d_w, m_w, m_d)
+  if w < m_w
+    puts "You may summon #{m_w - w} more wolves."
+  elsif w == m_w
+    puts "You have summoned the maximum amount of wolves."
+  else
+    puts "Invalid: Wolf Maximum Exceeded"
+  end
+  puts "-------------------------------"
+  if d_w < m_d
+    puts "You may summon #{m_d - d_w} more dire wolves."
+  elsif d_w == m_d
+    puts "You have summoned the maximum amount of dire wolves."
+  else
+    puts "Invalid: Dire Wolf Maximum Exceeded"
+  end
+end
+
+diablo_II_wolf_counter(2, 3, 5, 4)
