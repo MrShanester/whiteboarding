@@ -254,7 +254,7 @@ end
 
 log_stack(6)
 
-def diablo_II_wolf_counter(w, d_w, m_w, m_d)
+def diablo_ii_wolf_counter(w, d_w, m_w, m_d)
   if w < m_w
     puts "You may summon #{m_w - w} more wolves."
   elsif w == m_w
@@ -272,4 +272,4 @@ def diablo_II_wolf_counter(w, d_w, m_w, m_d)
   end
 end
 
-diablo_II_wolf_counter(2, 3, 5, 4)
+diablo_ii_wolf_counter(2, 3, 5, 4)
