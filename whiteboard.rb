@@ -273,3 +273,5 @@ def diablo_ii_wolf_counter(w, d_w, m_w, m_d)
 end
 
 diablo_ii_wolf_counter(2, 3, 5, 4)
+
+# Fixed some bugs
